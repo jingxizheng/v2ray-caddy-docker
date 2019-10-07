@@ -14,8 +14,8 @@ services:
       - '80'
       - '443'
     volumes:
-      - $(pwd)/Caddyfile:/etc/Caddyfile
-      - $(pwd)/index.html:/srv/index.html
+      - ./Caddyfile:/etc/Caddyfile
+      - ./index.html:/srv/index.html
       # - caddy-volume:/root/.caddy
     networks:
       inner-network:
