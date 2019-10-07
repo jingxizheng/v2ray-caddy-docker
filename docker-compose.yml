@@ -1,8 +1,5 @@
 version: '3.7'
 
-networks:
-  inner-network: ~
-
 volumes:
   caddy-volume:
 
@@ -17,17 +14,11 @@ services:
       - ./Caddyfile:/etc/Caddyfile
       - ./index.html:/srv/index.html
       # - caddy-volume:/root/.caddy
-    networks:
-      inner-network:
-        aliases:
-          - caddy.inner.com
 
   v2ray:
     image: v2ray/official:latest
     container_name: v2ray
+    ports:
+      - '9527'
     volumes:
       - ./config.json:/etc/v2ray/config.json
-    networks:
-      inner-network:
-        aliases:
-          - v2ray.inner.com

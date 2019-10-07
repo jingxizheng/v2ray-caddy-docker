@@ -1,4 +1,4 @@
-v2ray.inner.com
+ec2-52-15-48-119.us-east-2.compute.amazonaws.com
 {
   log /var/log/caddy.log
   proxy /ray localhost:9527 {
