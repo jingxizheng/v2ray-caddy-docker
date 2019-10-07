@@ -23,14 +23,11 @@ FROM alpine:latest
 LABEL maintainer "jingxi.zheng<zjx7014@gmail.com>"
 
 # Install caddy
+ENV ACME_AGREE="false"
+ENV ENABLE_TELEMETRY="false"
 COPY --from=builder_caddy /go/bin/parent /bin/parent
 COPY --from=builder_caddy /install/caddy /usr/bin/caddy
-RUN apk add --no-cache \
-    ca-certificates \
-    git \
-    mailcap \
-    openssh-client \
-    tzdata
+RUN apk add --no-cache openssh-client git
 
 # Install v2ray
 COPY --from=builder_v2ray /usr/bin/v2ray/v2ray /usr/bin/v2ray/
