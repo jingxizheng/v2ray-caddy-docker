@@ -30,6 +30,12 @@
                         "alterId": 64
                     }
                 ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {
+                    "path": "/ray"
+                }
             }
         }
     ],
