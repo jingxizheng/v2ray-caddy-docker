@@ -13,7 +13,7 @@ services:
     volumes:
       - ./Caddyfile:/etc/Caddyfile
       - ./index.html:/srv/index.html
-      # - caddy-volume:/root/.caddy
+      - ./index.html:/var/www/liangpi.fun/index.html
 
   v2ray:
     image: v2ray/official:latest
