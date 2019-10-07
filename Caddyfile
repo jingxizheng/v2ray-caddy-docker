@@ -1,7 +1,7 @@
 liangpi.fun
 {
   log /var/log/caddy.log
-  proxy /ray localhost:9527 {
+  proxy /ray liangpi.fun:9527 {
     websocket
     header_upstream -Origin
   }
