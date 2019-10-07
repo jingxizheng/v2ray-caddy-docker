@@ -20,5 +20,6 @@ services:
     container_name: v2ray
     ports:
       - '9527:9527'
+      - '9528:9528'
     volumes:
       - ./config.json:/etc/v2ray/config.json

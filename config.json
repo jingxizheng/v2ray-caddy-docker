@@ -18,6 +18,19 @@
                     "path": "/ray"
                 }
             }
+        },
+        {
+            "port": 9528,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "f98c565f-b2a5-4f32-8e50-38cb0a1a76dd",
+                        "level": 1,
+                        "alterId": 64
+                    }
+                ]
+            }
         }
     ],
     "outbounds": [
