@@ -1,0 +1,33 @@
+version: '3.7'
+
+networks:
+  inner-network: ~
+
+volumes:
+  caddy-volume:
+
+service:
+  caddy:
+    image: abiosoft/caddy:0.11.0-no-stats
+    container_name: caddy
+    ports:
+      - '80'
+      - '443'
+    volumes:
+      - $(pwd)/Caddyfile:/etc/Caddyfile
+      - $(pwd)/index.html:/srv/index.html
+      # - caddy-volume:/root/.caddy
+    networks:
+      inner-network:
+        aliases:
+          - caddy.inner.com
+
+  v2ray:
+    image: v2ray/official:latest
+    container_name: v2ray
+    volumes:
+      - $(pwd)/config.json:/etc/v2ray/config.json
+    networks:
+      inner-network:
+        aliases:
+          - v2ray.inner.com

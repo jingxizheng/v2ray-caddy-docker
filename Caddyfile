@@ -1,0 +1,8 @@
+v2ray.inner.com
+{
+  log /var/log/caddy.log
+  proxy /ray localhost:9527 {
+    websocket
+    header_upstream -Origin
+  }
+}
