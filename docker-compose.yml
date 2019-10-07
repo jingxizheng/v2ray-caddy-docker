@@ -26,7 +26,7 @@ services:
     image: v2ray/official:latest
     container_name: v2ray
     volumes:
-      - $(pwd)/config.json:/etc/v2ray/config.json
+      - ./config.json:/etc/v2ray/config.json
     networks:
       inner-network:
         aliases:
